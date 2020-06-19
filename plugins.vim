@@ -1,0 +1,12 @@
+call plug#begin('~/.config/nvim/plugged')
+Plug 'lervag/vimtex'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdtree'
+Plug 'voldikss/vim-floaterm'
+Plug 'mhinz/vim-startify'
+Plug 'unblevable/quick-scope'       
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+call plug#end()
