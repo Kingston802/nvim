@@ -6,6 +6,7 @@ source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/plugin-config/nerdtree.vim 
 source $HOME/.config/nvim/plugin-config/floaterm.vim
 source $HOME/.config/nvim/plugin-config/vimtex.vim
+source $HOME/.config/nvim/plugin-config/markdown.vim
 
 " source keybindings
 source $HOME/.config/nvim/keys.vim
@@ -32,6 +33,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " " Run texclear when leaving file
 autocmd VimLeave *.tex !texclear %
+
+" Adds commenting for matlab files
+autocmd FileType matlab setlocal commentstring=%\ %s
 
 " sane defaults for vim splits
 set splitbelow splitright

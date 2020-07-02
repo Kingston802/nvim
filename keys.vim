@@ -22,7 +22,6 @@ let mapleader = " "
 map <leader>h <C-w>t<C-w>H
 map <leader>k <C-w>t<C-w>K
 
-map <Leader>p :!compiler %<CR>
 map <Leader>v :e ~/.config/nvim/init.vim<CR>
 map <leader>o :setlocal spell! spelllang=en_us<CR>
 map <leader><leader> :Commentary<CR>
