@@ -8,8 +8,6 @@ Plug 'unblevable/quick-scope'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'ap/vim-css-color'
 Plug 'lervag/vimtex'
-Plug 'iamcco/mathjax-support-for-mkdp'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'jvirtanen/vim-octave'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/matchit.zip'
@@ -18,4 +16,6 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'alvan/vim-closetag'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mattn/emmet-vim'
+Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 call plug#end()
