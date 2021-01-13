@@ -2,8 +2,7 @@
 source $HOME/.config/nvim/plugins.vim 
 
 " source config files
-" left over from a past life 
-" source $HOME/.config/nvim/plugin-config/coc.vim 
+source $HOME/.config/nvim/plugin-config/coc.vim 
 source $HOME/.config/nvim/plugin-config/nerdtree.vim 
 source $HOME/.config/nvim/plugin-config/floaterm.vim
 source $HOME/.config/nvim/plugin-config/vimtex.vim
@@ -13,6 +12,8 @@ source $HOME/.config/nvim/plugin-config/fugitive.vim
 
 " source keybindings
 source $HOME/.config/nvim/keys.vim
+
+let g:python3_host_prog = "/usr/bin/python3.9"
 
 " some basics
 " color gruvbox 
@@ -42,6 +43,11 @@ set showtabline=0 " never show tabline
 set ignorecase
 set smartcase
 let $FZF_DEFAULT_OPTS='--reverse'
+
+filetype plugin indent on
+augroup filetypedetect
+    au BufNewFile,BufRead *.s,*.inc set ft=asm_ca65
+augroup END
 
 " Disables automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

@@ -1,4 +1,4 @@
-" set cmdheight=2 " more space for dispalying messages 
+set cmdheight=2 " more space for dispalying messages 
 set updatetime=300 " shorten update time to something usable
 set shortmess+=c " don't pass messages to ins completion menu
 
