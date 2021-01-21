@@ -6,22 +6,59 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'voldikss/vim-floaterm'
 Plug 'unblevable/quick-scope'       
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'yggdroot/indentline'
 Plug 'lervag/vimtex'
-Plug 'jvirtanen/vim-octave'
-Plug 'pangloss/vim-javascript'
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vim-scripts/matchit.zip'
 Plug 'mhinz/vim-startify'
 Plug 'maxbane/vim-asm_ca65'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'morhetz/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'alvan/vim-closetag'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'mattn/emmet-vim'
-Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 call plug#end()
+
+" NERDTree 
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeIgnore = []
+let g:NERDTreeStatusline = ''
+
+" Automaticaly close nvim if NERDTree is only thing left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" floaterm
+let g:floaterm_height = 0.9
+let g:floaterm_width = 0.9
+
+" vimtex 
+let g:vimtex_quickfix_ignore_filters = [
+          \ 'You have requested package ',
+          \]
+let g:vimtex_quickfix_latexlog = {
+            \ 'default' : 1,
+            \ 'fix_paths' : 0,
+            \ 'general' : 1,
+            \ 'references' : 1,
+            \ 'overfull' : 0,
+            \ 'underfull' : 0,
+            \ 'font' : 1,
+            \ 'packages' : {
+            \   'default' : 0,
+            \   'natbib' : 1,
+            \   'biblatex' : 1,
+            \   'babel' : 1,
+            \   'hyperref' : 1,
+            \   'scrreprt' : 1,
+            \   'fixltx2e' : 1,
+            \   'titlesec' : 1,
+            \   '../../template/NotesTeX' : 0,
+            \ },
+            \}
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname = 'nvr'
+
+autocmd VimLeave *.tex !texclear %<CR>
+
+
