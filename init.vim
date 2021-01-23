@@ -67,7 +67,6 @@ set undofile
 set ignorecase
 set smartcase
 set incsearch
-let $FZF_DEFAULT_OPTS='--reverse'
 
 " personal settings 
 set scrolloff=8

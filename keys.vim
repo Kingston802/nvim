@@ -52,3 +52,6 @@ map <Leader>\ :VimtexCompile<CR>
 map <leader>gh :diffget //3<CR>
 map <leader>gu :diffget //2<CR>
 map <leader>gs :G<CR>
+
+" telescope bindings 
+nnoremap <leader>f <cmd>Telescope find_files<cr>

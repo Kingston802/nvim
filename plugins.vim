@@ -1,4 +1,9 @@
 call plug#begin('~/.config/nvim/plugged')
+" Language server 
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
 " Tim Pope, I choose you 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -7,11 +12,17 @@ Plug 'tpope/vim-fugitive'
 
 " General usability
 Plug 'scrooloose/nerdtree'
+" Plug 'mbbill/undotree'
 Plug 'voldikss/vim-floaterm'
 Plug 'unblevable/quick-scope'       
 Plug 'yggdroot/indentline'
 Plug 'alvan/vim-closetag'
 Plug 'vim-scripts/matchit.zip'
+
+" Telescope requirements 
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " Language specific 
 Plug 'lervag/vimtex'
@@ -25,6 +36,20 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+" LSP
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF
+" language server 
+lua require'lspconfig'.pyls.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.clangd.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
+
 " NERDTree 
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
@@ -37,7 +62,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " floaterm
 let g:floaterm_height = 0.9
 let g:floaterm_width = 0.9
-hi FloatermBorder guibg=0 guifg=0
 
 " vimtex 
 let g:vimtex_quickfix_ignore_filters = [
