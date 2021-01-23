@@ -25,7 +25,10 @@ let g:nord_underline = 1
 augroup nord-theme-overrides
     autocmd!
     " Use 'nord10' as foreground color for Vim comments
+    autocmd ColorScheme nord highlight Comment ctermfg=13
     autocmd ColorScheme nord highlight vimComment ctermfg=13
+    autocmd ColorScheme nord highlight helpComment ctermfg=13
+    autocmd ColorScheme nord highlight helpExample ctermfg=13
 augroup END
 
 " set decent numbers 

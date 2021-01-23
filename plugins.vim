@@ -1,20 +1,27 @@
 call plug#begin('~/.config/nvim/plugged')
+" Tim Pope, I choose you 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
+
+" General usability
 Plug 'scrooloose/nerdtree'
 Plug 'voldikss/vim-floaterm'
 Plug 'unblevable/quick-scope'       
 Plug 'yggdroot/indentline'
+Plug 'alvan/vim-closetag'
+Plug 'vim-scripts/matchit.zip'
+
+" Language specific 
 Plug 'lervag/vimtex'
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'vim-scripts/matchit.zip'
-Plug 'mhinz/vim-startify'
 Plug 'maxbane/vim-asm_ca65'
+
+" Decorative stuff
+Plug 'mhinz/vim-startify'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'alvan/vim-closetag'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
@@ -30,6 +37,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " floaterm
 let g:floaterm_height = 0.9
 let g:floaterm_width = 0.9
+hi FloatermBorder guibg=0 guifg=0
 
 " vimtex 
 let g:vimtex_quickfix_ignore_filters = [
