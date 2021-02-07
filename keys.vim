@@ -55,3 +55,9 @@ map <leader>gs :G<CR>
 
 " telescope bindings 
 nnoremap <leader>f <cmd>Telescope find_files<cr>
+
+" completion bindings 
+imap <tab> <Plug>(completion_smart_tab)
+imap <s-tab> <Plug>(completion_smart_s_tab)
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

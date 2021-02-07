@@ -12,6 +12,8 @@ Plug 'tpope/vim-fugitive'
 
 " General usability
 Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+
 " Plug 'mbbill/undotree'
 Plug 'voldikss/vim-floaterm'
 Plug 'unblevable/quick-scope'       
@@ -93,4 +95,8 @@ let g:vimtex_compiler_progname = 'nvr'
 
 autocmd VimLeave *.tex !texclear %<CR>
 
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
 
+" Avoid showing message extra message when using completion
+set shortmess+=c
